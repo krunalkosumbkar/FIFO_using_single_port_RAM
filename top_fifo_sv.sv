@@ -1,4 +1,5 @@
 // top module of fifo
+// Dependent upon the MMCM IP to generate the clock that's exactly of twice the frequency of the user clock
 module top_fifo_sv #(
   parameter int FFDEPTH       = 1024,
   parameter int FFDATA_WIDTH  = 32,
@@ -129,7 +130,7 @@ module top_fifo_sv #(
   ); 
 
   // ============================================================
-  // Clock Wizard (MMCM)
+  // Clock Wizard (MMCM) 
   // ============================================================
   clk_wizard_mmcm fft (
     // Clock out ports
